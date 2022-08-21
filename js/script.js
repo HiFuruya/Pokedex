@@ -1,6 +1,7 @@
 const pokemonName = document.querySelector('.pokemon_name');
 const pokemonNumber = document.querySelector('.pokemon_number');
 const pokemonImage = document.querySelector('.pokemon_image');
+const pokemonCry = document.querySelector('.pokemon_cry');
 
 const form = document.querySelector('.form');
 const input = document.querySelector('.input_search');
@@ -30,6 +31,7 @@ const renderData = async (pokemon) =>{
         pokemonName.innerHTML = data.name;
         pokemonNumber.innerHTML = data.id;
         pokemonImage.src = data.sprites.versions['generation-v']['black-white'].animated.front_default;
+        pokemonCry.src = `cries/${data.id}.ogg`;
 
         atual = data.id;
 
