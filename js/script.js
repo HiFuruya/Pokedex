@@ -17,7 +17,17 @@ const fetchPokemon = async (pokemon) =>{
         return APIResponse.json();
 } 
 
+const fetchDescricao = async (pokemon) =>{
+    const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon}/`);
+
+    return APIResponse.json();
+}
+
 const renderData = async (pokemon) =>{
+
+    const descricao = await fetchDescricao(pokemon);
+
+    console.log(descricao.flavor_text_entries);
 
     pokemonImage.style.display = 'none';
     pokemonName.innerHTML = "Loading...";
@@ -31,7 +41,7 @@ const renderData = async (pokemon) =>{
         pokemonName.innerHTML = data.name;
         pokemonNumber.innerHTML = data.id;
         pokemonImage.src = data.sprites.versions['generation-v']['black-white'].animated.front_default;
-        pokemonCry.src = `cries/${data.id}.ogg`;
+        pokemonCry.src = `cries/${data.id}.wav`;
 
         atual = data.id;
 
