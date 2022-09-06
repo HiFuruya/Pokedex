@@ -5,8 +5,10 @@ const pokemonCry = document.querySelector('.pokemon_cry');
 
 const form = document.querySelector('.form');
 const input = document.querySelector('.input_search');
+const sound = document.querySelector('.soundwave');
 const buttonPrev = document.querySelector('.btn-prev');
 const buttonNext = document.querySelector('.btn-next');
+const buttonSound = document.querySelector('.btn-sound');
 
 let atual = 1;
 
@@ -26,8 +28,6 @@ const fetchDescricao = async (pokemon) =>{
 const renderData = async (pokemon) =>{
 
     const descricao = await fetchDescricao(pokemon);
-
-    console.log(descricao.flavor_text_entries);
 
     pokemonImage.style.display = 'none';
     pokemonName.innerHTML = "Loading...";
@@ -73,3 +73,8 @@ buttonNext.addEventListener('click', ()=>{
     atual++;
     renderData(atual);
 })
+
+buttonSound.addEventListener('click', () => {
+    pokemonCry.play();
+})
+

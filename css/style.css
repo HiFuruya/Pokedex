@@ -84,3 +84,21 @@ form{
     box-shadow: inset -4px 4px 0px rgb(43, 42, 42); 
     font-size: 0.9rem;
 }
+
+.soundwave{
+    position: absolute;
+    width: 40%;
+}
+
+.btn-sound{
+    position: absolute;
+    background-color: transparent; 
+    border-color: transparent;
+    top: 21%;
+    right: 25%;
+    width: 20%;
+}
+
+.btn-sound:active{
+    width: 21%;
+}
